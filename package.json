@@ -1,0 +1,22 @@
+{
+  "name": "phase_2_benchmarks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tasks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkallas/Phase-2-benchmarks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pkallas/Phase-2-benchmarks/issues"
+  },
+  "homepage": "https://github.com/pkallas/Phase-2-benchmarks#readme",
+  "dependencies": {
+    "node-print": "0.0.4"
+  }
+}
