@@ -18,5 +18,8 @@
   "homepage": "https://github.com/pkallas/Phase-2-benchmarks#readme",
   "dependencies": {
     "node-print": "0.0.4"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2"
   }
 }
