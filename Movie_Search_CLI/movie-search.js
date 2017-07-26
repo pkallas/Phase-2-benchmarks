@@ -12,7 +12,7 @@ const input = process.argv[2];
 const imdbPath = qs.stringify(
     {ref_ : 'nv_sr_fn',
     q: input,
-    s: 'all'});
+    s: 'tt'});
 // Use port 80 for http
 const req = http.request({
   hostname: 'www.imdb.com',
