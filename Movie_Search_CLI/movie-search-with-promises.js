@@ -8,18 +8,16 @@ const imdbPath = qs.stringify(
     s: 'tt'});
 const imdbMoviesPage = {
   uri: 'http://www.imdb.com/find?' + imdbPath,
-  transform: function (body) {
-    return cheerio.load(body);
-  }
+  transform: (body) => cheerio.load(body)
 };
 
 rp(imdbMoviesPage)
-  .then(function($) {
+  .then(($) => {
     let titles = $('.result_text').map((i, elm) => $(elm).text()).toArray().join('\n');
     console.log(titles);
     console.log(titles.length + ' results');
   })
-  .catch(function(err) {
+  .catch((err) => {
     console.log('Problem loading imdb!');
     throw err
   });
