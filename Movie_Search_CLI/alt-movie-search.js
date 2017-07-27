@@ -5,7 +5,7 @@ const input = process.argv[2];
 const imdbPath = qs.stringify(
     {ref_ : 'nv_sr_fn',
     q: input,
-    s: 'tt'});
+    s: 'a'});
 
 function queryIMDB(search, cb) {
   const request = http.get({
@@ -32,13 +32,14 @@ function getMovieNames(html) {
       return movieNames;
 }
 
-queryIMDB("nemo", (err, movieNames) => {
+queryIMDB(input, (err, movieNames) => {
   if (err) {
     throw err
   }
   console.log(movieNames.join('\n'))
 })
 
+module.exports = queryIMDB;
 /* This is an alternative method to solving the movie_search_cli benchmark. This
 method uses callbacks and error handling. Rather than using cheerio.load() within
 the http GET request, cheerio.load() is used within an external function, and then

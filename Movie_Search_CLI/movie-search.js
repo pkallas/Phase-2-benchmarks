@@ -14,7 +14,7 @@ const imdbPath = qs.stringify(
     q: input,
     s: 'tt'});
 // Use port 80 for http, that's the default; not necessary to declare the port unless it is different than 80
-const req = http.request({
+const req = http.get({
   hostname: 'www.imdb.com',
   path:'/find?' + imdbPath
 }, (res) => {
@@ -23,17 +23,17 @@ const req = http.request({
     str += chunk
   })
   res.on('end', function () {
-    const $ = cheerio.load(str);
     //<div class ='findSection'>, <table class='findList'>, <td class='result_text'>
     // class we want is 'result_text'
+    const $ = cheerio.load(str);
     let titles = $('.result_text').map((i, elm) => $(elm).text()).toArray().join('\n');
     //Return result in console display --> result
     console.log(titles);
+    console.log(titles.length + ' results');
   })
 })
 
-req.end()
-
+// module.exports = getMovieNames;
 /* let titles = $('.result_text').text(); --> alternative way of using cheerio to
 get the text you want; this method does not allow the text to be mapped to an Array,
 however, so while simpler, it's not as useful. The map method above requires passing
