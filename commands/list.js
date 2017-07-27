@@ -4,7 +4,7 @@ const print = require('node-print');
 
 const list = () => fs.readFile('./tasks.json', (err, data) => {
   if (err) {
-    return err
+    throw err
   }
   let tasks = JSON.parse(data);
   print.pt(tasks);

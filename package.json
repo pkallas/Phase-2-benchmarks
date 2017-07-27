@@ -4,7 +4,7 @@
   "description": "",
   "main": "tasks.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./Tests"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,13 @@
   },
   "homepage": "https://github.com/pkallas/Phase-2-benchmarks#readme",
   "dependencies": {
-    "node-print": "0.0.4"
+    "node-print": "0.0.4",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
   },
   "devDependencies": {
-    "cheerio": "^1.0.0-rc.2"
+    "chai": "^4.1.0",
+    "cheerio": "^1.0.0-rc.2",
+    "mocha": "^3.4.2"
   }
 }

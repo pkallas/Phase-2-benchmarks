@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const add = (task) => fs.readFile('./tasks.json', (err, data) => {
   if (err) {
-    return err
+    throw err
   }
   let tasks = JSON.parse(data);
   let toDo = new Object();
