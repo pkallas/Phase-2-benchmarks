@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const done = (num) => fs.readFile('./tasks.json', (err, data) =>{
   if (err) {
-    return err
+    throw err
   }
   if (num === undefined) {
     return console.log('Please provide an ID; use list to see available IDs');
